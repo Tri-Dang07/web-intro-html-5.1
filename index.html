@@ -3,63 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới Thiệu Môn Học: Thiết Kế Web Toàn Diện</title>
+  <title>Biểu Mẫu Nhập Họ Tên Hoàn Chỉnh</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-    th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-    th { background-color: #f2f2f2; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+    }
+    legend {
+      font-weight: bold;
+      color: #333;
+      padding: 0 10px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 6px;
+      color: #555;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="text"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
 
-  <!-- TODO 1: viết cấu trúc HTML chính -->
-  <h1>Khóa Học: Nhập Môn Thiết Kế Web (HTML5 & CSS3)</h1>
-  <hr>
+  <form action="#" method="post">
+    
+    <fieldset>
+      <legend>Thông Tin Thành Viên</legend>
 
-  <!-- TODO 2: bổ sung nội dung, bảng, danh sách hoặc form theo đề -->
-  <h2>1. Tổng quan môn học</h2>
-  <p>Môn học này cung cấp kiến thức nền tảng cốt lõi về phát triển giao diện website (Frontend). Học viên sẽ hiểu cách trình duyệt vận hành, cách xây dựng một trang web chuẩn SEO và cách tư duy bố cục giao diện hiện đại.</p>
+      <div class="form-group">
+        <label for="hoTen">Họ và tên của bạn:</label>
+        <input 
+          type="text" 
+          id="hoTen" 
+          name="hoTen" 
+          placeholder="Ví dụ: Nguyễn Văn A" 
+          required 
+          minlength="2" 
+          maxlength="50"
+        >
+      </div>
+      
+      <button type="submit">Xác Nhận Đăng Ký</button>
+    </fieldset>
 
-  <h2>2. Lộ trình học tập (Kiến thức cốt lõi)</h2>
-  <ul>
-    <li><strong>Tuần 1-2:</strong> Tổng quan về Internet và cấu trúc xương sườn HTML5.</li>
-    <li><strong>Tuần 3-5:</strong> Định dạng giao diện, màu sắc và xây dựng bố cục với CSS3 (Flexbox/Grid).</li>
-    <li><strong>Tuần 6-7:</strong> Thiết kế Responsive (Tương thích mượt mà trên cả Máy tính & Điện thoại).</li>
-    <li><strong>Tuần 8:</strong> Đồ án cuối khóa - Tự tay xuất bản trang web cá nhân lên Internet.</li>
-  </ul>
+  </form>
 
-  <h2>3. Tiêu chí đánh giá môn học</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Thành phần đánh giá</th>
-        <th>Trọng số (%)</th>
-        <th>Hình thức</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Chuyên cần & Bài tập nhỏ</td>
-        <td>20%</td>
-        <td>Thực hành trên lớp</td>
-      </tr>
-      <tr>
-        <td>Bài kiểm tra giữa kỳ</td>
-        <td>30%</td>
-        <td>Trắc nghiệm & Code live</td>
-      </tr>
-      <tr>
-        <td>Đồ án cuối khóa (Project)</td>
-        <td>50%</td>
-        <td>Xây dựng website hoàn chỉnh</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- TODO 3: thêm script nếu đề yêu cầu tương tác -->
   <script>
-    console.log("Trang giới thiệu môn học Thiết kế web đã tải thành công!");
+    // Đoạn script nhỏ kiểm tra sự kiện gửi form
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const inputName = document.getElementById('hoTen').value;
+      console.log("Dữ liệu họ tên chuẩn bị gửi lên server là: " + inputName);
+    });
   </script>
 
 </body>
